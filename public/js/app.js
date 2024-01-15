@@ -1,4 +1,6 @@
 
+var myWow = new WOW().init();
+
 var myFullpage = new fullpage('#fullpage', {
 	// Navigation
 	menu: '#menu',
@@ -16,7 +18,7 @@ var myFullpage = new fullpage('#fullpage', {
 	autoScrolling: true,
 	fitToSection: true,
 	fitToSectionDelay: 600,
-	scrollBar: false,
+	scrollBar: true,
 	easing: 'easeInOutCubic',
 	easingcss3: 'ease',
 	loopBottom: false,
@@ -31,7 +33,7 @@ var myFullpage = new fullpage('#fullpage', {
 	resetSliders: false,
 	fadingEffect: false,
 	normalScrollElements: '#element1, .element2',
-	scrollOverflow: true,
+	scrollOverflow: false,
 	scrollOverflowMacStyle: false,
 	scrollOverflowReset: false,
 	touchSensitivity: 15,
@@ -59,7 +61,7 @@ var myFullpage = new fullpage('#fullpage', {
 	parallax: false,
 	parallaxOptions: { type: 'reveal', percentage: 62, property: 'translate' },
 	dropEffect: false,
-	dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999 },
+	dropEffectOptions: { speed: 1300, color: '#F82F4D', zIndex: 9999 },
 	waterEffect: false,
 	waterEffectOptions: { animateContent: true, animateOnMouseMove: true },
 	cards: false,
@@ -79,7 +81,7 @@ var myFullpage = new fullpage('#fullpage', {
 		handleAnimations(destination);
 	},
 	afterLoad: function (origin, destination, direction, trigger) { 
-		$(destination.item).find('.to-animate-left').addClass('animated fadeInLeftBig');
+		// $(destination.item).find('.to-animate-left').addClass('animated fadeInLeftBig');
 	},
 	afterRender: function () { },
 	afterResize: function (width, height) { },
@@ -92,7 +94,6 @@ var myFullpage = new fullpage('#fullpage', {
 
 
 });
-
 const handleAnimations = (destination) => {
 	if (window.matchMedia("(min-width: 1300px)").matches) {
 		const destinationAnimatedEls = destination.item.querySelectorAll(
